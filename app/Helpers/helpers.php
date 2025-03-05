@@ -896,11 +896,7 @@ if (!function_exists('getFooterMenuData')) {
                 ];
                 $menuData[] = $menuIDetails;
             }
-            foreach ($menuData as $item) {
-                $che = '<li><a class="widget-link" href="' . $item['route'] . '">' . $item['name'] . '</a></li>';
-                $flattenedMenuData[] = $che;
-            }
-            return $flattenedMenuData;
+
         }
     }
 }
