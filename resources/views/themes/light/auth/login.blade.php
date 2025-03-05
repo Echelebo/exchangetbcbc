@@ -33,18 +33,7 @@
                                 </div>
                             @endif
 
-                            @if(isset($template['social']) && count($template['social']) > 0)
-                                <div class="bottom-content">
-                                    <div class="social-area mt-50">
-                                        <ul class="d-flex">
-                                            @foreach($template['social'] as $social)
-                                                <li><a href="{{@$social->content->media->my_link}}"><i
-                                                            class="{{@$social->content->media->icon}}"></i></a></li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
-                            @endif
+
                         </div>
                     </div>
                 </div>
@@ -129,41 +118,9 @@
                             </div>
                             <button type="submit" class="cmn-btn mt-30 w-100">@lang('Log In')</button>
 
-                            @if(config('socialite.google_status') && config('socialite.facebook_status') && config('socialite.github_status'))
-                                <hr class="divider">
-                            @endif
 
-                            <div class="cmn-btn-group">
-                                <div class="row g-2">
-                                    @if(config('socialite.google_status'))
-                                        <div class="col-4">
-                                            <a href="{{route('socialiteLogin','google')}}"
-                                               class="btn cmn-btn3 w-100 social-btn"><img
-                                                    src="{{$themeTrue.'img/google.png'}}"
-                                                    alt="...">@lang('Google')
-                                            </a>
-                                        </div>
-                                    @endif
-                                    @if(config('socialite.facebook_status'))
-                                        <div class="col-4">
-                                            <a href="{{route('socialiteLogin','facebook')}}"
-                                               class="btn cmn-btn3 w-100 social-btn"><img
-                                                    src="{{$themeTrue.'img/facebook.png'}}"
-                                                    alt="...">@lang('Facebook')
-                                            </a>
-                                        </div>
-                                    @endif
-                                    @if(config('socialite.github_status'))
-                                        <div class="col-4">
-                                            <a href="{{route('socialiteLogin','github')}}"
-                                               class="btn cmn-btn3 w-100 social-btn"><img
-                                                    src="{{$themeTrue.'img/github.png'}}"
-                                                    alt="...">@lang('Github')
-                                            </a>
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
+
+
 
                             <div class="pt-20 text-center">
                                 @lang("Don't have an account?")

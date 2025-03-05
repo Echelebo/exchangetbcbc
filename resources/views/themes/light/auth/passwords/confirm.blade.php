@@ -19,7 +19,7 @@
                                 <p>@lang('Please enter your new password again to confirm and ensure accuracy.')</p>
                             </div>
 
-                            @include($theme.'auth.socialIcon')
+
                         </div>
                     </div>
                 </div>

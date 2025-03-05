@@ -25,18 +25,7 @@
                                 <p>@lang('Experience the ease and security of our streamlined password change process – regain access to your account in just a few clicks!')</p>
                             </div>
 
-                            @if(isset($template['social']) && count($template['social']) > 0)
-                                <div class="bottom-content">
-                                    <div class="social-area mt-50">
-                                        <ul class="d-flex">
-                                            @foreach($template['social'] as $social)
-                                                <li><a href="{{@$social->content->media->my_link}}"><i
-                                                            class="{{@$social->content->media->icon}}"></i></a></li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
-                            @endif
+
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,7 @@
                                 <p>@lang('Regain access with your seamless and secure account retrieval process in just a few clicks!')</p>
                             </div>
 
-                            @include($theme.'auth.socialIcon')
+
                         </div>
                     </div>
                 </div>

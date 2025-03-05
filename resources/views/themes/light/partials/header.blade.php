@@ -69,6 +69,10 @@
         </div>
         <div class="nav-right">
             <ul class="custom-nav">
+                <li class="nav-item">
+                    <a class="nav-link login-btn-x" href="{{route('tracking')}}"><span
+                            class="d-none-x d-md-block-x">@lang('Tracking')</span></a>
+                </li>
                 @guest
                     <li class="nav-item">
                         <a class="nav-link login-btn" href="{{ route('login') }}"><i

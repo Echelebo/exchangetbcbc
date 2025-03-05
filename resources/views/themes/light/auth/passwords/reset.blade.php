@@ -20,7 +20,7 @@
                                 <p>@lang('Initiate the password reset process effortlessly and securely to regain control of your account with just a few simple steps.')</p>
                             </div>
 
-                            @include($theme.'auth.socialIcon')
+
                         </div>
                     </div>
                 </div>
