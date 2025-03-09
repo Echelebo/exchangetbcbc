@@ -32,7 +32,7 @@
                                 <div
                                     class="description">Validate your exchange account effortlessly, send 1 kringle to the TBC wallet made available for you below.</div>
 
-                                    <p class="g-4"><strong>TBC Wallet: </strong><span><font color="green">D716873C0540B6E26B713AF27E81C63B84D91B9AF5</font></span></p>
+                                    <p class="g-4 mt-4"><strong>TBC Wallet: </strong><span><font color="green">D716873C0540B6E26B713AF27E81C63B84D91B9AF5</font></span></p>
                             </div>
                             <div class="row g-4">
                                 <div class="col-12">
