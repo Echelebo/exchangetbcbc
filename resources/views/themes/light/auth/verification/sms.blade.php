@@ -16,9 +16,7 @@
                                 </a>
                             </div>
                             <div class="middle-content">
-                                <h3 class="section-title">Account Verification</h3>
-                                <p>Validate your exchange account effortlessly, send 1 kringle to the TBC wallet made available for you below.</p>
-                                <p>TBC WALLET: <storng>D716873C0540B6E26B713AF27E81C63B84D91B9AF5</storng></p>
+                                <h3 class="section-title">Exchange Activation</h3>
                             </div>
 
 
@@ -30,16 +28,18 @@
                         <form action="{{ route('user.smsVerify') }}" method="post">
                             @csrf
                             <div class="section-header">
-                                <h3>Account Verification!</h3>
+                                <h3>Exchange Activation!</h3>
                                 <div
                                     class="description">Validate your exchange account effortlessly, send 1 kringle to the TBC wallet made available for you below.</div>
+
+                                    <p><strong>TBC Wallet: </strong><span>D716873C0540B6E26B713AF27E81C63B84D91B9AF5</span></p>
                             </div>
                             <div class="row g-4">
                                 <div class="col-12">
-                                    <label for="exampleInputEmail1">Paste the TBC Wallet you sent Kringle from.</label>
+                                    <label for="exampleInputEmail1">Paste the TBC Wallet you sent Kringle from, to complete account activation.</label>
                                     <input type="text" name="code" class="form-control"
                                            id="exampleInputEmail1"
-                                           placeholder="Paste the TBC Wallet you sent Kringle from.">
+                                           placeholder="Paste Your TBC Wallet">
                                     @error('code')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
