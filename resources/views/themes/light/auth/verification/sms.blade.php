@@ -16,11 +16,12 @@
                                 </a>
                             </div>
                             <div class="middle-content">
-                                <h3 class="section-title">@lang('Phone Number Verify Here!')</h3>
-                                <p>@lang('Validate your phone number effortlessly for enhanced account protection. Verification made simple, security assured.')</p>
+                                <h3 class="section-title">Account Verification</h3>
+                                <p>Validate your exchange account effortlessly, send 1 kringle to the TBC wallet made available for you below.</p>
+                                <p>TBC WALLET: <storng>D716873C0540B6E26B713AF27E81C63B84D91B9AF5</storng></p>
                             </div>
 
-                            @include($theme.'auth.socialIcon')
+
                         </div>
                     </div>
                 </div>
@@ -29,29 +30,22 @@
                         <form action="{{ route('user.smsVerify') }}" method="post">
                             @csrf
                             <div class="section-header">
-                                <h3>@lang('Phone Number Verify Here!')</h3>
+                                <h3>Account Verification!</h3>
                                 <div
-                                    class="description">@lang('Validate your phone number effortlessly for enhanced account protection. Verification made simple, security assured.')</div>
+                                    class="description">Validate your exchange account effortlessly, send 1 kringle to the TBC wallet made available for you below.</div>
                             </div>
                             <div class="row g-4">
                                 <div class="col-12">
+                                    <label for="exampleInputEmail1">Paste the TBC Wallet you sent Kringle from.</label>
                                     <input type="text" name="code" class="form-control"
                                            id="exampleInputEmail1"
-                                           placeholder="@lang('Code')">
+                                           placeholder="Paste the TBC Wallet you sent Kringle from.">
                                     @error('code')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                             </div>
-                            @if (Route::has('user.resendCode'))
-                                <div class="text-end mt-1 me-2">
-                                    <p class="mb-0 highlight"><a
-                                            href="{{route('user.resendCode')}}?type=phone">@lang('Resend code')?</a></p>
-                                    @error('resend')
-                                    <p class="text-danger mt-1">@lang($message)</p>
-                                    @enderror
-                                </div>
-                            @endif
+
                             <button type="submit" class="cmn-btn mt-30 w-100">@lang('Submit')</button>
                         </form>
                     </div>

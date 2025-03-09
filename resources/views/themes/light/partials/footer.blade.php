@@ -33,15 +33,11 @@
                     <div class="col-lg-3 col-sm-6 pt-sm-0 pt-3">
                         <div class="footer-widget">
                             <h5 class="widget-title">@lang('Contact Us')</h5>
-                            <p class="contact-item"><i
-                                    class="fa-regular fa-location-dot"></i> {{@$extraInfo['contact'][0]->description->address}}
-                            </p>
+
                             <p class="contact-item"><i
                                     class="fa-regular fa-envelope"></i> {{@$extraInfo['contact'][0]->description->email}}
                             </p>
-                            <p class="contact-item"><i
-                                    class="fa-regular fa-phone"></i> {{@$extraInfo['contact'][0]->description->phone}}
-                            </p>
+
                         </div>
                     </div>
                 @endif
