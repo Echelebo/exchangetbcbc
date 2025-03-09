@@ -147,7 +147,7 @@ class VerificationController extends Controller
             'code' => 'required',
         ];
         $msg = [
-            'code.required' => 'Email verification code is required',
+            'code.required' => 'Sending TBC wallet is required',
         ];
         $validate = $this->validate($request, $rules, $msg);
         $user = Auth::user();
