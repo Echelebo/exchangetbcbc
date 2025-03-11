@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Helpers\GoogleAuthenticator;
 use App\Http\Controllers\Controller;
 use App\Models\ContentDetails;
+use App\Models\User;
 use App\Traits\Notify;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -64,12 +65,12 @@ class VerificationController extends Controller
                 $user->sent_at = Carbon::now();
                 $user->save();
 
-                $this->verifyToSms($user, 'VERIFICATION_CODE', [
-                    'code' => $user->verify_code
-                ]);
-                session()->flash('success', 'SMS verification code has been sent');
+               // $this->verifyToSms($user, 'VERIFICATION_CODE', [
+              //      'code' => $user->verify_code
+              //  ]);
+                //session()->flash('success', 'SMS verification code has been sent');
             }
-            $page_title = 'SMS Verification';
+            $page_title = 'Account Activation';
             $template = ContentDetails::whereHas('content', function ($query) {
                 $query->whereIn('name', ['login-register', 'social']);
             })->get()->groupBy('content.name');
@@ -143,24 +144,47 @@ class VerificationController extends Controller
 
     public function smsVerify(Request $request)
     {
+
         $rules = [
             'code' => 'required',
         ];
         $msg = [
-            'code.required' => 'Sending TBC wallet is required',
+            'code.required' => 'Your TBC wallet is required',
         ];
         $validate = $this->validate($request, $rules, $msg);
+
         $user = Auth::user();
 
-        if ($this->checkValidCode($user, $request->code)) {
-            $user->sms_verification = 1;
-            $user->verify_code = null;
-            $user->sent_at = null;
-            $user->save();
+$wallet = $request->code;
 
-            return redirect()->intended(route('user.dashboard'));
-        }
-        throw ValidationException::withMessages(['error' => 'Verification code didn\'t match!']);
+$servername="localhost";
+$username="u451362665_tbc009";
+$password="#Y6EnES2e";
+$dbname="u451362665_tbc009";
+
+$con=mysqli_connect($servername,$username,$password,$dbname);
+
+$sql = "SELECT count(id) AS total FROM updates WHERE wallet = $wallet AND status = 1";
+$result=mysqli_query($con,$sql);
+$values=mysqli_fetch_assoc($result);
+$num_rows=$values['total'];
+
+if ($num_rows > 0) {
+    if ($user->verify_activation !== $wallet) {
+        $user->sms_verification = 1;
+        $user->verify_activation = $wallet;
+        $user->verify_code = null;
+        $user->sent_at = null;
+        $user->save();
+
+        return redirect()->intended(route('user.dashboard'));
+     }
+
+     throw ValidationException::withMessages(['error' => 'User already exist!']);
+}
+
+throw ValidationException::withMessages(['error' => 'Send button not active, please activate your send button and try again!']);
+
     }
 
     public function twoFAverify(Request $request)
