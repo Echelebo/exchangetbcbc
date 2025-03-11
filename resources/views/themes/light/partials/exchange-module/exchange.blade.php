@@ -81,7 +81,13 @@
     </div>
 
     <div class="btn-area">
+        @guest
+        <a href="{{@$hero['single']['media']->my_link}}" class="cmn-btn w-100" >@lang("Exchange now")</a>
+        @endguest
+        @auth
         <button type="submit" class="cmn-btn w-100" id="submitBtn">@lang("Exchange now")</button>
+        @endauth
+
     </div>
 </div>
 
