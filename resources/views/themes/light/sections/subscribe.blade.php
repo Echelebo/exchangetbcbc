@@ -11,7 +11,7 @@
 
                         <form action="{{ route('tracking') }}" method="GET" class="newsletter-form">
                             @csrf
-                            <input type="email" value="{{@request()->trx_id}}" name="trx_id" class="form-control" placeholder="e.g 65defbe618d07"/>
+                            <input type="text" value="{{@request()->trx_id}}" name="trx_id" class="form-control" placeholder="e.g 65defbe618d07"/>
                             <button type="submit" class="subscribe-btn">@lang('Track')</button>
                         </form>
 
