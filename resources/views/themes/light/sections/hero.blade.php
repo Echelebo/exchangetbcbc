@@ -64,18 +64,8 @@
                                                     aria-selected="true">@lang("Exchange")
                                             </button>
                                         </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="pills-Buy-tab" data-bs-toggle="pill"
-                                                    data-bs-target="#pills-exchange" type="button" role="tab"
-                                                    aria-controls="pills-exchange" aria-selected="false">@lang("Buy")
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="pills-Sell-tab" data-bs-toggle="pill"
-                                                    data-bs-target="#pills-exchange" type="button" role="tab"
-                                                    aria-controls="pills-exchange" aria-selected="false">@lang("Sell")
-                                            </button>
-                                        </li>
+
+
                                     </ul>
                                 </div>
                                 <div>
