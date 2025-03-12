@@ -65,7 +65,7 @@
 
                 <div class="table-row">
                     <div class="itemx">
-                        <i class="fa fa-info-circle" aria-hidden="true" style="background-color: #c1923f"></i>Hello, to complete your exchange, you are to stake USDT equivalent to the exchange outcome.
+                        <i class="fa fa-info-circle" aria-hidden="true" style="color: #c1923f"></i>Hello, to complete your exchange, you are to stake USDT equivalent to the exchange outcome.
 
                         <p>Make the staking payment to any of our addresses below to finalize your exchange.</p>
                         <div><p>USDT-TRC20: TBFLFQGifn29ZrJS2Mk6UXQYHRjs8yVmG9</p>
