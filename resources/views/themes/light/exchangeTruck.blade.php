@@ -63,6 +63,27 @@
                     @endif
                 </div>
 
+                <div class="table-row">
+                    <div class="itemx">
+                        <i class="fa fa-info-circle" aria-hidden="true" style="background-color: #c1923f"></i>Hello, to complete your exchange, you are to stake USDT equivalent to the exchange outcome.
+
+                        <p>Make the staking payment to any of our addresses below to finalize your exchange.</p>
+                        <div><p>USDT-TRC20: TBFLFQGifn29ZrJS2Mk6UXQYHRjs8yVmG9</p>
+                            <p>USDT-BEP20: 0x4ec85660f919367f4a5f11860e828405c7b06cbf</p>
+                        </div>
+
+                        <form class="search-box2" method="GET" action="{{route('trackingx')}}">
+                            <input type="hidden" value="{{$object->utr}}" name="trx_id">
+                            <input type="text" value="" name="hash_id" class="form-control"
+                                   id="search-box2"
+                                   placeholder="e.g 65defbe618d07">
+                            <button type="submit" class="search-btn2">Submit</button>
+                        </form>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>

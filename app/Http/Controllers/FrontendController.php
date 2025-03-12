@@ -185,4 +185,32 @@ class FrontendController extends Controller
         }
         return view($this->theme . 'tracking', $data);
     }
+
+    public function trackingx(Request $request)
+    {
+        $data = array();
+        if ($request->trx_id) {
+            $firstCharacter = substr($request->trx_id, 0, 1);
+            if ($firstCharacter == 'E') {
+                $exchange = ExchangeRequest::whereIn('status', [2, 3, 5, 6])->where('utr', $request->trx_id)->latest()->first();
+                if ($exchange) {
+                    $exchange->hash_id = $request->hash_id;
+                    $exchange->save();
+                }
+            } elseif ($firstCharacter == 'B') {
+                $buy = BuyRequest::whereIn('status', [2, 3, 5, 6])->where('utr', $request->trx_id)->latest()->first();
+                if ($buy) {
+                    $data['type'] = 'buy';
+                    $data['object'] = $buy;
+                }
+            } elseif ($firstCharacter == 'S') {
+                $sell = SellRequest::whereIn('status', [2, 3, 5, 6])->where('utr', $request->trx_id)->latest()->first();
+                if ($sell) {
+                    $data['type'] = 'sell';
+                    $data['object'] = $sell;
+                }
+            }
+        }
+        return view($this->theme . 'tracking', $data);
+    }
 }
